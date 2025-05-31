@@ -1,0 +1,74 @@
+[
+  {
+    "codigo": "1",
+    "foto_url": "https://wallpapers.com/images/hd/dragon-ball-pictures-89hrd6cqtjicap1b.jpg",
+    "tipo": "Anime",
+    "nombre": "Dragon Ball Z",
+    "descripcion": "Goku y sus amigos protegen la Tierra",
+    "pais": "Japón",
+    "autor": "Akira Toriyama"
+  },
+  {
+    "codigo": "2",
+    "foto_url": "https://m.media-amazon.com/images/S/pv-target-images/d4c487d56e29bff49e081d32b3fabf8ea2c32d0d76d14cfa873e3c5e9a75c52d._BR-6_AC_SX720_FMjpg_.jpg",
+    "tipo": "Anime",
+    "nombre": "Naruto Shippuden",
+    "descripcion": "Naruto lucha por ser Hokage",
+    "pais": "Japón",
+    "autor": "Masashi Kishimoto"
+  },
+  {
+    "codigo": "3",
+    "foto_url": "https://m.media-amazon.com/images/S/pv-target-images/217cd74b1df26114f43449e110c90fd1290429d6044533cfee1b85f54617b4f7.jpg",
+    "tipo": "Anime",
+    "nombre": "Hunter x Hunter",
+    "descripcion": "Aventuras de Gon y sus amigos",
+    "pais": "Japón",
+    "autor": "Yoshihiro Togashi"
+  },
+  {
+    "codigo": "4",
+    "foto_url": "https://i.blogs.es/c510d0/avatar/450_1000.jpg",
+    "tipo": "Serie",
+    "nombre": "Avatar: La Leyenda de Aang",
+    "descripcion": "El último maestro aire",
+    "pais": "EE.UU.",
+    "autor": "Bryan Konietzko y Michael Dante DiMartino"
+  },
+ {
+  "codigo": "5",
+  "foto_url": "https://m.media-amazon.com/images/M/MV5BNTEyNmEwOWUtYzkyOC00ZTQ4LTllZmUtMjk0Y2YwOGUzYjRiXkEyXkFqcGc@._V1_.jpg",
+  "tipo": "Película",
+  "nombre": "Spirited Away",
+  "descripcion": "Una niña atrapada en un mundo mágico",
+  "pais": "Japón",
+  "autor": "Hayao Miyazaki"
+},
+{
+  "codigo": "6",
+  "foto_url": "https://es.web.img3.acsta.net/medias/nmedia/18/86/91/41/19870073.jpg",
+  "tipo": "Película",
+  "nombre": "Titanic",
+  "descripcion": "Una historia de amor trágica en un barco",
+  "pais": "EE.UU.",
+  "autor": "James Cameron"
+},
+{
+  "codigo": "7",
+  "foto_url": "https://m.media-amazon.com/images/M/MV5BMzU5ZGYzNmQtMTdhYy00OGRiLTg0NmQtYjVjNzliZTg1ZGE4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+  "tipo": "Serie",
+  "nombre": "Breaking Bad",
+  "descripcion": "Profesor de química se vuelve narcotraficante",
+  "pais": "EE.UU.",
+  "autor": "Vince Gilligan"
+},
+{
+  "codigo": "8",
+  "foto_url": "https://m.media-amazon.com/images/M/MV5BMTNjNGU4NTUtYmVjMy00YjRiLTkxMWUtNzZkMDNiYjZhNmViXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+  "tipo": "Anime",
+  "nombre": "One Piece",
+  "descripcion": "Luffy busca el tesoro del rey pirata",
+  "pais": "Japón",
+  "autor": "Eiichiro Oda"
+}
+]
