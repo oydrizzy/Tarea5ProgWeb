@@ -1,72 +1,55 @@
-<?php
-$archivo = 'datos/obras.json';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $obra = [
-        'codigo' => $_POST['codigo'],
-        'foto_url' => $_POST['foto_url'],
-        'tipo' => $_POST['tipo'],
-        'nombre' => $_POST['nombre'],
-        'descripcion' => $_POST['descripcion'],
-        'pais' => $_POST['pais'],
-        'autor' => $_POST['autor']
-    ];
-
-    $obras = file_exists($archivo) ? json_decode(file_get_contents($archivo), true) : [];
-
-    foreach ($obras as $item) {
-        if ($item['codigo'] === $obra['codigo']) {
-            $mensaje = "⚠️ Ese código ya está registrado.";
-            break;
-        }
-    }
-
-    if (!isset($mensaje)) {
-        $obras[] = $obra;
-        file_put_contents($archivo, json_encode($obras, JSON_PRETTY_PRINT));
-        $mensaje = "✅ Obra guardada correctamente.";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Registro de Obras</title>
-    <link rel="stylesheet" href="assets/css/styles.css?<?php echo time();?>">
+  <meta charset="UTF-8">
+  <title>🌸 Mundo Barbie - Inicio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffe4f2, #ffc4e1);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #e0218a;
+      text-align: center;
+      padding-top: 50px;
+    }
+    .btn-barbie {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .btn-barbie:hover {
+      background-color: #ff1493;
+      transform: scale(1.05);
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      text-shadow: 2px 2px white;
+    }
+    .logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
 
-<?php include_once 'datos/menu.php' ?>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Barbie_Logo.svg/2560px-Barbie_Logo.svg.png" alt="Logo Barbie" class="logo">
+  <h1>Bienvenida al Mundo Barbie 💖</h1>
+  <p style="font-size: 1.2rem;">Gestiona tus personajes, profesiones y descubre estadísticas brillantes</p>
 
-<div class="main">
-    <div class="form-container">
-        <h2>Registrar Obra</h2>
-        <?php if (isset($mensaje)): ?>
-            <div class="mensaje <?= strpos($mensaje, '⚠️') !== false ? 'error' : '' ?>">
-                <?= $mensaje ?>
-            </div>
-        <?php endif; ?>
-        <form method="post">
-            <input type="text" name="codigo" placeholder="Código único" required>
-            <input type="url" name="foto_url" placeholder="URL de imagen" required>
-            <select name="tipo" required>
-                <option value="">Seleccionar tipo</option>
-                <option value="Serie">Serie</option>
-                <option value="Película">Película</option>
-                <option value="Libro">Libro</option>
-            </select>
-            <input type="text" name="nombre" placeholder="Nombre" required>
-            <textarea name="descripcion" placeholder="Descripción breve" required></textarea>
-            <input type="text" name="pais" placeholder="País de origen" required>
-            <input type="text" name="autor" placeholder="Autor o creador" required>
-            <button type="submit">Guardar Obra</button>
-        </form>
-    </div>
-</div>
-
-
+  <div class="container mt-5">
+    <a href="personajes.php" class="btn btn-barbie">👩‍🎤 Registrar Personajes</a>
+    <a href="profesiones.php" class="btn btn-barbie">💼 Registrar Profesiones</a>
+    <a href="dashboard.php" class="btn btn-barbie">📊 Ver Dashboard</a>
+  </div>
 
 </body>
 </html>
