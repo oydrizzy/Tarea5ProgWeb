@@ -1,8 +1,12 @@
+<?php
+$archivo = 'datos/personajes.json';
+$personajes = file_exists($archivo) ? json_decode(file_get_contents($archivo), true) : [];
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>🌸 Mundo Barbie - Inicio</title>
+  <title>🌸 Mundo Barbie</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
@@ -34,15 +38,42 @@
       text-shadow: 2px 2px white;
     }
     .logo {
-      width: 120px;
+      width: 220px;
       margin-bottom: 20px;
+    }
+    .tarjeta-personaje {
+      background-color: white;
+      border-radius: 20px;
+      padding: 15px;
+      margin: 15px;
+      box-shadow: 0 4px 12px rgba(255,105,180,0.3);
+      text-align: center;
+      max-width: 220px;
+    }
+    .tarjeta-personaje img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .tarjetas-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .tarjeta-personaje small {
+      font-size: 0.8rem;
+      color: #888;
     }
   </style>
 </head>
 <body>
 
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Barbie_Logo.svg/2560px-Barbie_Logo.svg.png" alt="Logo Barbie" class="logo">
-  <h1>Bienvenida al Mundo Barbie 💖</h1>
+  <img src="/img/logo.png" alt="Logo" class="logo">
+  <h1>Bienvenid@ al Mundo Barbie 💖</h1>
   <p style="font-size: 1.2rem;">Gestiona tus personajes, profesiones y descubre estadísticas brillantes</p>
 
   <div class="container mt-5">
@@ -50,6 +81,21 @@
     <a href="profesiones.php" class="btn btn-barbie">💼 Registrar Profesiones</a>
     <a href="dashboard.php" class="btn btn-barbie">📊 Ver Dashboard</a>
   </div>
+
+  <?php if ($personajes): ?>
+    <h3 class="mt-5">👑 Personajes</h3>
+    <div class="tarjetas-grid">
+      <?php foreach ($personajes as $p): ?>
+        <div class="tarjeta-personaje">
+          <img src="<?= htmlspecialchars($p['foto_url']) ?>" alt="<?= htmlspecialchars($p['nombre']) ?>">
+          <strong><?= htmlspecialchars($p['nombre']) ?> <?= htmlspecialchars($p['apellido']) ?></strong>
+          <div><small>🎂 <?= $p['fecha_nacimiento'] ?></small></div>
+          <div>💼 <?= htmlspecialchars($p['profesion']) ?></div>
+          <div>⭐ <?= htmlspecialchars($p['experiencia']) ?></div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  <?php endif; ?>
 
 </body>
 </html>
