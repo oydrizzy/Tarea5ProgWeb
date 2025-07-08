@@ -1,5 +1,4 @@
 <?php
-// api4.php
 $clima = null;
 $ciudad = '';
 $error = '';

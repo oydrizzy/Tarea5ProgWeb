@@ -1,5 +1,4 @@
 <?php
-// api2.php
 $edad = null;
 $categoria = '';
 $nombre = '';

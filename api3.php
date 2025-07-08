@@ -1,5 +1,4 @@
 <?php
-// api3.php
 $universidades = [];
 $pais = '';
 $error = '';

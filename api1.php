@@ -1,5 +1,4 @@
 <?php
-// api1.php
 $genero = null;
 $nombre = '';
 $error = '';
@@ -7,7 +6,6 @@ $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = trim($_POST['nombre']);
     if ($nombre !== '') {
-        // Llamar a la API Genderize
         $apiUrl = "https://api.genderize.io/?name=" . urlencode($nombre);
         $response = @file_get_contents($apiUrl);
 
@@ -38,7 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php echo include 'files/menu.php'; ?>
 
-  <!-- Contenido principal -->
   <main class="flex-1 ml-64 p-10">
     <section class="bg-white rounded-lg shadow p-8 max-w-lg mx-auto">
       <h2 class="text-2xl font-bold text-gray-800 mb-4">👦👧 Predicción de Género</h2>
